@@ -1,0 +1,13 @@
+<div class="header">
+    <div class="title">{{ 'adminConsole' | translate }}</div>
+    <div class="other">
+        <div class="language" (click)="isShowLanguageList = !isShowLanguageList">
+            <div [ngStyle]="{'cursor': 'pointer'}">{{ 'languages' | translate }}</div>
+            <div class="language-list" *ngIf="isShowLanguageList">
+                <div (click)="selectLang('en')">English</div>
+                <div (click)="selectLang('ru')">Русский</div>
+            </div>
+        </div>
+        <div class="logout" (click)="logout()">{{ 'logout' | translate }}</div>
+    </div>
+</div>

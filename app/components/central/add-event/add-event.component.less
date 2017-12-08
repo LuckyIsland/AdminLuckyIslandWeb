@@ -1,0 +1,90 @@
+.add-event-container {
+    display: flex;
+    width: 100%;
+    flex-flow: column;
+
+    .event-data {
+        display: flex;
+        
+        width: 100%;
+        height: 100px;
+        // margin: 15px;
+        padding-bottom: 15px;
+        font-size: 20px;
+        .ed-country, .ed-sport, .ed-league, .ed-team, .ed-date {
+            display: flex;
+            flex-flow: column;
+            border-right: 3px solid #f3f3f4;
+            background: white;
+            width: 100%;
+            // padding-bottom: 5px;
+            .title {
+                display: flex;
+                height: 50%;
+                align-items: center;
+                padding-left: 20px;
+                box-sizing: border-box;
+            }
+            .option {
+                display: flex;
+                height: 35px;
+                margin: 0 10px;
+                box-sizing: border-box;
+                font-size: 17px;
+                border: 1px solid;
+                border-radius: 6px;
+            }
+        }
+    }
+
+    .event-bettype {
+        display: flex;
+        padding: 15px;
+        
+        .eb-odd {
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+            padding: 5px;
+            height: 100px;
+            justify-content: center;
+            background: white;
+            border-right: 3px solid #f3f3f4;
+            &:last-child {
+                border: 0;
+            }
+            .eb-odd-elem {
+                display: flex;
+                height: 32px;
+                font-size: 21px;
+                
+                div {
+                    display: flex;
+                    width: 50%;
+                    justify-content: center;
+                    align-content: center;
+                    height: 100%;
+                }
+                input {
+                    display: flex;
+                    width: 50%;
+                }
+                &:first-child {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    .elem {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+.name {
+    padding-left: 15px;
+    font-size: 23px;
+}

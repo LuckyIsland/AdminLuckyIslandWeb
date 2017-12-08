@@ -1,0 +1,28 @@
+<!-- <app-menu></app-menu> -->
+<div class="loading" *ngIf="isLoading">
+	<img src = "../assets/loading.gif"/> 
+</div>
+<div class="auth-container" *ngIf="!isAuthorization">
+	<div class="text">{{ 'adminConsole' | translate }}</div>
+	<div class="auth-main" *ngIf="!isShowCodeField">
+		<div class="auth-input">
+			<input type="text" placeholder="UserName" [(ngModel)]="login" />
+			<input type="password" placeholder="Password" [(ngModel)]="password" />
+		</div>
+		<div class="handler-error" *ngIf="status">{{ status }}</div>
+		<div class="btn" (click)="authorization()">{{ 'login' | translate }}</div>
+	</div>
+	<div class="code" *ngIf="isShowCodeField">
+		<input type="password" placeholder="Code" [(ngModel)]="code" />
+		<div class="handler-error" *ngIf="status">{{ status }}</div>
+		<div class="btn" (click)="sendCode()">Send Code</div>
+	</div>
+</div>
+
+<div class="app" *ngIf="isAuthorization">
+	<app-header></app-header>
+	<div>
+		<app-menu [account]="account"></app-menu>
+		<app-central></app-central>
+	</div>
+</div>

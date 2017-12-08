@@ -1,0 +1,56 @@
+<div class="add-event-container">
+    <div class="elem">
+        <div class="event-data">
+            <div class="ed-sport">
+                <div class="title">{{'sport' | translate}}</div>
+                <select class="option" (change)="selectSport($event.target.value)">
+                    <option *ngFor="let sport of sports" value={{sport.SportId}}>{{ sport.SportName }}</option>
+                </select>
+            </div>
+            <div class="ed-country">
+                <div class="title">{{'country' | translate}}</div>
+                <select class="option" (change)="selectCountry($event.target.value)">
+                    <option *ngFor="let country of countries" value={{country.CountryCode}}>{{country.CountryName}}</option>
+                </select>
+            </div>
+            <div class="ed-league">
+                <div class="title">{{'league' | translate}}</div>
+                <select class="option">
+                    <option *ngFor="let league of leagues" value={{league.LeagueId}}>{{league.LeagueName}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="event-data">
+            <div class="ed-team">
+                <div class="title">{{'homeTeam' | translate}}</div>
+                <select class="option">
+                    <option *ngFor="let team of teams" value={{team.TeamId}}>{{team.TeamName}}</option>
+                </select>
+            </div>
+            <div class="ed-team">
+                <div class="title">{{'guestTeam' | translate}}</div>
+                <select class="option">
+                    <option *ngFor="let team of teams" value={{team.TeamId}}>{{team.TeamName}}</option>
+                </select>
+            </div>
+            <div class="ed-date">
+                <div class="title">{{'eventDate' | translate}}</div>
+                <div class="option">10.12.2017</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="name">{{'betType' | translate}}</div>
+    <div class="event-bettype" *ngFor="let bettype of bettypes">
+        <div class="eb-odd" *ngFor="let odd of bettype.Odds">
+            <div class="eb-odd-elem">
+                <div>{{ odd.OddTitle }}</div>
+                <input type="text" [(ngModel)]="odd.OddFactor">
+            </div>
+            <div class="eb-odd-elem">
+                <div>{{'limit' | translate}}</div>
+                <input type="text" [(ngModel)]="odd.OddLimit">
+            </div>
+        </div>
+    </div>
+</div>

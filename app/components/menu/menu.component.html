@@ -1,0 +1,13 @@
+<!-- <img src="../../../assets/menu.jpg"/> -->
+<div class="user" *ngIf="account">
+    <div class="name">{{ account.FirstName }} {{ account.LastName }}</div>
+    <div class="balance">{{ account.Balance }} {{ account.Currency }}</div>
+</div>
+<div class="menu">
+    <div class="menu-item" *ngFor="let item of menuItems">
+        <div class="elem-l1" (click)="item.IsOpen = !item.IsOpen">{{ item.Name | translate }}</div>
+        <div class="elem-l2" *ngIf="item.IsOpen && item.Childs.length > 0">
+            <div *ngFor="let child of item.Childs">{{ child.Name | translate }}</div>
+        </div>
+    </div>
+</div>
